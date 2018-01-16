@@ -1,0 +1,51 @@
+h1 {
+    font-size: 1em;
+}
+
+.characters {
+    width: 100%;
+    text-align: center;
+    font-size: 10em;
+}
+
+.helpers {
+    width: 100%;
+    color: grey;
+    text-align: center;
+    height: 2em;
+    font-size: 2em;
+}
+
+.helpers div {
+    display: inline-block;
+}
+
+.answers {
+    width: 100%;
+    text-align: center;
+}
+
+.answers button {
+    margin: 10px;
+}
+
+.scores {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+
+.score {
+    display: inline-block;
+    margin: 50px;
+}
+
+.score div {
+    display: inline-block;
+}
+
+.pastGames {
+    display: block;
+    position: absolute;
+    top: 50px;
+}
