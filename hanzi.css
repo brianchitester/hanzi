@@ -16,6 +16,28 @@ h1 {
     font-size: 2em;
 }
 
+.sentence {
+    width: 100%;
+    color: grey;
+    text-align: center;
+    font-size: 2em;
+}
+
+.pinyinSentence{
+    width: 100%;
+    color: grey;
+    text-align: center;
+    height: 1.2em;
+    font-size: 1em; 
+}
+.englishSentence{
+    width: 100%;
+    color: grey;
+    text-align: center;
+    height: 1.2em;
+    font-size: 1em; 
+}
+
 .helpers div {
     display: inline-block;
 }
@@ -37,7 +59,7 @@ h1 {
 
 .score {
     display: inline-block;
-    margin: 50px;
+    margin: 10px 50px;
 }
 
 .score div {
