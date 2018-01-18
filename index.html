@@ -59,7 +59,8 @@
         $('.pinyinSentence').html('');
 
         //set the character
-        let max = getQueryString("max") || 1499;
+        let max = getQueryString("max") <= 1499 ? getQueryString("max") : 1499;
+
         character = characters[chance.integer({min:1, max:max})];
         let displayCharacter = character.characters.simplfied;
         if (character.characters.tradtional !== character.characters.simplfied) {
