@@ -12,7 +12,7 @@ h1 {
     width: 100%;
     color: grey;
     text-align: center;
-    height: 2em;
+    margin: 10px;
     font-size: 2em;
 }
 
@@ -27,14 +27,14 @@ h1 {
     width: 100%;
     color: grey;
     text-align: center;
-    height: 1.2em;
+    height: 1.5em;
     font-size: 1em; 
 }
 .englishSentence{
     width: 100%;
     color: grey;
     text-align: center;
-    height: 1.2em;
+    height: 1.5em;
     font-size: 1em; 
 }
 
@@ -49,6 +49,15 @@ h1 {
 
 .answers button {
     margin: 10px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 .scores {
@@ -59,7 +68,7 @@ h1 {
 
 .score {
     display: inline-block;
-    margin: 10px 50px;
+    margin: 0px 50px;
 }
 
 .score div {
@@ -69,5 +78,5 @@ h1 {
 .pastGames {
     display: block;
     position: absolute;
-    top: 50px;
+    top: 100px;
 }

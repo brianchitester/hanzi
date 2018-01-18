@@ -15,6 +15,17 @@
 
 <body>
     <h1>汉字 / 漢字 / Hàn Zì</h1>
+    <div>
+        <select class="maxCharacters">
+          <option value="10">10</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <option value="1000" selected>1000</option>
+          <option value="1499">1500</option>
+        </select>
+        most common characters.
+    </div>
     <div class="characters"></div>
     <div class="sentence"></div>
     <div class="pinyinSentence"></div>
@@ -24,16 +35,16 @@
 
     <div class="helpers">
         <div class="pinyin"></div>
-        <div class="dash"></div>
+        <div class="dash">-</div>
         <div class="english"></div>
     </div>
     
     <div class="scores">
         <div class="score pinyinScore">
-          <div class="pinyinCorrect">0</div> / <div class="pinyinTotal">0</div>
+          pinyin score: <div class="pinyinCorrect">0</div> / <div class="pinyinTotal">0</div>
         </div>
         <div class="score englishScore">
-          <div class="englishCorrect">0</div> / <div class="englishTotal">0</div>
+          meaning score: <div class="englishCorrect">0</div> / <div class="englishTotal">0</div>
         </div>
     </div>
 
@@ -53,14 +64,15 @@
     let newGame = () => {
         $('.english').html('');
         $('.pinyin').html('');
-        $('.dash').html('');
         $('.answers').html('');
         $('.englishSentence').html('');
         $('.pinyinSentence').html('');
 
-        //set the character
-        let max = getQueryString("max") && getQueryString("max") <= 1499 ? getQueryString("max") : 1499;
+        
+        let max = $(".maxCharacters").val();
+        console.log(max);
 
+        //set the character
         character = characters[chance.integer({min:1, max:max})];
         let displayCharacter = character.characters.simplfied;
         if (character.characters.tradtional !== character.characters.simplfied) {
@@ -99,11 +111,11 @@
     let answerPinyin = (bool) => {
         let pinyinTotal = parseInt($('.pinyinTotal').text());
         $('.pinyinTotal').text(pinyinTotal + 1);
-        $('.pinyin').css('color', 'red');
+        $('.pinyin').css('color', '#f44336');
         if (bool) {
             let pinyinCorrect = parseInt($('.pinyinCorrect').text());
             $('.pinyinCorrect').text(pinyinCorrect + 1);
-            $('.pinyin').css('color', 'green');
+            $('.pinyin').css('color', '#4CAF50');
         }
 
         $('.pinyin').text(character.pinyin);
@@ -135,14 +147,12 @@
     let answerDef = (bool) => {
         let englishTotal = parseInt($('.englishTotal').text());
         $('.englishTotal').text(englishTotal + 1);
-        $('.english').css("color", "red");
+        $('.english').css("color", "#f44336");
         if (bool) {
             let englishCorrect = parseInt($('.englishCorrect').text());
             $('.englishCorrect').text(englishCorrect + 1);
-            $('.english').css("color", "green");
+            $('.english').css("color", "#4CAF50");
         }
-
-        $('.dash').text("-");
 
         $('.english').text(character.definition);
         $('.englishSentence').text(sentences[sentence].english);
