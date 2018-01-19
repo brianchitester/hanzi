@@ -1,6 +1,7 @@
 $( document ).ready(() => {
     newGame();
 });
+let max = $(".maxCharacters").val();
 $('.maxCharacters').on('change', ()=>{
     $('.pinyinCorrect').text("0");
     $('.pinyinTotal').text("0");
@@ -8,7 +9,7 @@ $('.maxCharacters').on('change', ()=>{
     $('.englishTotal').text("0");
     newGame()
 });
-let max = $(".maxCharacters").val();
+
 let sentence = {};
 let getQueryString = (field) => {
     let href = window.location.href;
@@ -23,6 +24,7 @@ let newGame = () => {
     $('.answers').html('');
     $('.englishSentence').html('');
     $('.pinyinSentence').html('');
+    max = parseInt($(".maxCharacters").val());
 
     //set the character
     character = characters[chance.integer({min:1, max:max})];
