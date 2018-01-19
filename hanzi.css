@@ -22,6 +22,9 @@ h1 {
     text-align: center;
     font-size: 2em;
 }
+.bold {
+    color: black;
+}
 
 .pinyinSentence{
     width: 100%;

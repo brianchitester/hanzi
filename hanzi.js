@@ -36,9 +36,11 @@ let newGame = () => {
     sentence = _.findKey(sentences, (s) => { return s.simplified.indexOf(character.characters.simplfied) >= 0; });
     let displaySentence = sentences[sentence].simplified;
     if (character.characters.tradtional !== character.characters.simplfied) {
-        displaySentence = sentences[sentence].traditional + " / " + displaySentence;
+        displaySentence = sentences[sentence].traditional + " /  " + displaySentence;
+        displaySentence = displaySentence.replace(character.characters.tradtional, '<span class="bold">' + character.characters.tradtional + '</span>');
     }
-    $('.sentence').text(displaySentence);
+    displaySentence = displaySentence.replace(character.characters.simplfied, '<span class="bold">' + character.characters.simplfied + '</span>');
+    $('.sentence').html(displaySentence);
 
     var answerButtons = [$('<button/>',
     {
