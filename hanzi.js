@@ -1,7 +1,7 @@
 $( document ).ready(() => {
     newGame();
 });
-let max = $(".maxCharacters").val();
+let max = parseInt($(".maxCharacters").val());
 $('.maxCharacters').on('change', ()=>{
     $('.pinyinCorrect').text("0");
     $('.pinyinTotal').text("0");
@@ -25,6 +25,11 @@ let newGame = () => {
     $('.englishSentence').html('');
     $('.pinyinSentence').html('');
     max = parseInt($(".maxCharacters").val());
+
+    if (max >= 1500){
+        $(".maxCharacters").val(1500);
+        max = 1499; //heh heh
+    }
 
     //set the character
     character = characters[chance.integer({min:1, max:max})];
